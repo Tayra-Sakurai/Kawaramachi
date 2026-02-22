@@ -1,0 +1,57 @@
+﻿[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "kawaramachi-tayra"
+dynamic = ["version"]
+description = ''
+readme = "README.md"
+requires-python = ">=3.14"
+license = "AGPL-3.0-or-later"
+keywords = []
+authors = [
+  { name = "Tayra Sakurai", email = "taira_sakurai@outlook.jp" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python :: 3.14",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+  "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
+]
+dependencies = []
+
+[project.urls]
+Documentation = "https://github.com/Tayra-Sakurai/Kawaramachi#readme"
+Issues = "https://github.com/Tayra-Sakurai/Kawaramachi/issues"
+Source = "https://github.com/Tayra-Sakurai/Kawaramachi"
+
+[tool.hatch.version]
+path = "src/kawaramachi_tayra/__about__.py"
+
+[tool.hatch.envs.types]
+extra-dependencies = [
+  "mypy>=1.0.0",
+]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/kawaramachi_tayra tests}"
+
+[tool.coverage.run]
+source_pkgs = ["kawaramachi_tayra", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/kawaramachi_tayra/__about__.py",
+]
+
+[tool.coverage.paths]
+kawaramachi_tayra = ["src/kawaramachi_tayra", "*/kawaramachi-tayra/src/kawaramachi_tayra"]
+tests = ["tests", "*/kawaramachi-tayra/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
