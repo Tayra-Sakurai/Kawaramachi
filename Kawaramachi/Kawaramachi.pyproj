@@ -41,7 +41,7 @@
     <Compile Include="kawaramachi-tayra\tests\__init__.py" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="kawaramachi-tayra\LICENSE.md" />
+    <Content Include="kawaramachi-tayra\LICENSE.txt" />
     <Content Include="kawaramachi-tayra\docs_src\make.bat" />
     <Content Include="kawaramachi-tayra\docs_src\Makefile" />
     <Content Include="kawaramachi-tayra\docs_src\source\index.rst" />
